@@ -4,17 +4,19 @@ $block: 'button';
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 3rem;
+    gap: 2rem;
 }
 
 .#{$block} {
+    margin: 1rem 0;
     text-decoration: none;
     color: black;
     font-family: Arial, Helvetica, sans-serif;
+    z-index: 5;
 
     &-rotating {
         font-size: 1.2rem;
-        border: 2px solid black;
+        box-shadow: 0 0 .75rem rgba(0, 0, 0, 0.6);
         padding: 2rem 4rem;
         position: relative;
         overflow: hidden;
@@ -45,7 +47,7 @@ $block: 'button';
 
     &-swipe {
         font-size: 1.2rem;
-        border: 2px solid black;
+        box-shadow: 0 0 .75rem rgba(0, 0, 0, 0.6);
         padding: 2rem 4rem;
         position: relative;
         overflow: hidden;
@@ -75,7 +77,7 @@ $block: 'button';
 
     &-cross {
         font-size: 1.2rem;
-        border: 2px solid black;
+        box-shadow: 0 0 .75rem rgba(0, 0, 0, 0.6);
         padding: 2rem 4rem;
         position: relative;
         overflow: hidden;
@@ -122,7 +124,7 @@ $block: 'button';
 
     &-swipe-text {
         font-size: 1.2rem;
-        border: 2px solid black;
+        box-shadow: 0 0 .75rem rgba(0, 0, 0, 0.6);
         padding: 2rem 4rem;
         position: relative;
         overflow: hidden;
@@ -151,7 +153,7 @@ $block: 'button';
 
     &-scale-text {
         font-size: 1.2rem;
-        border: 2px solid black;
+        box-shadow: 0 0 .75rem rgba(0, 0, 0, 0.6);
         padding: 2rem 4rem;
         position: relative;
         overflow: hidden;
@@ -177,6 +179,124 @@ $block: 'button';
         &:hover::before {
             transform: scale(1);
             opacity: 1;
+        }
+    }
+
+    &-three-layers{
+        padding: 2rem 4rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        background-color: gold;
+        color: white;
+        letter-spacing: 2px;
+        font-size: 1.2rem;
+        position: relative;
+
+        &::before,
+        &::after {
+            content: 'button';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: rotateX(270deg);
+            transform-origin: top;
+            transition: all .5s;
+        }
+
+        &::before{
+            background-color: limegreen;
+        }
+
+        &::after{
+            background-color: firebrick;
+            transition-delay: .25s;
+        }
+
+        &:hover::before,
+        &:hover::after{
+            transform: rotateX(0);
+        }
+    }
+
+    &-three-circles{
+        width: 220px;
+        height: 80px;
+        color: darkolivegreen;
+        background-color: transparent;
+        font-size: 26px;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 80px;
+        transition: all .5s;
+        position: relative;
+
+        &::before,
+        &::after{
+            content: '';
+            position: absolute;
+            top: 50%;
+            $size: 20px;
+            width: $size;
+            height: $size;
+            background-color: darkolivegreen;
+            border-radius: 50%;
+            transform: translateY(-50%);
+            transition: all .3s;
+            z-index: -1;
+            opacity: 0;
+        }
+
+        &::before{
+            left: 0;
+            box-shadow: -100px 0 0 darkolivegreen;
+        }
+
+        &::after{
+            right: 0;
+            box-shadow: 100px 0 0 darkolivegreen;
+        }
+
+        &:hover{
+            color: ivory;
+            transition-delay: .4s;
+        }
+
+        &:hover::before{
+            left: 50%;
+            box-shadow: 30px 0 0 darkolivegreen;
+            transform: translateX(-50%) translateY(-50%);
+            opacity: 1;
+        }
+
+        &:hover::after{
+            right: 50%;
+            box-shadow: -30px 0 0 darkolivegreen;
+            transform: translate(50%) translateY(-50%);
+            opacity: 1;
+        }
+
+        span{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: darkolivegreen;
+            border-radius: 8px;
+            transform: scale(0);
+            transition: all .3s;
+            z-index: -1;
+        }
+
+        &:hover span{
+            transform: scale(1);
+            transition-delay: .4s;
         }
     }
 }
