@@ -1,0 +1,40 @@
+.main-content {
+	overflow-x: hidden;
+
+	>* {
+		max-width: calc(100% - 2rem);
+		margin-right: auto;
+		margin-left: auto;
+
+		@media (min-width: 540px) {
+			max-width: 540px;
+		}
+
+		@media (min-width: 720px) {
+			max-width: 720px;
+		}
+	}
+
+	>*.container,
+	>*.alignwide {
+		@media (min-width: 960px) {
+			max-width: 960px;
+		}
+
+		@media (min-width: 1275px) {
+			max-width: 1275px;
+		}
+	}
+
+	>*.alignfull {
+		max-width: 100%;
+	}
+
+	img {
+		max-width: inherit;
+	}
+}
+
+main {
+	margin-bottom: 5rem;
+}

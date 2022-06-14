@@ -1,0 +1,76 @@
+@import "animations/buttons";
+@import "layouts/layout";
+@import "layouts/wrappers";
+@import "layouts/background";
+@import "components/code";
+@import "components/buttons";
+@import "components/nav";
+@import "components/dropdown";
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+li {
+    font-family: monospace;
+    color: rgb(30, 50, 50);
+}
+
+h1 {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+    margin-top: 8rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+p,
+a,
+li {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    margin-bottom: 3rem;
+}
+
+.highlighted-text {
+    font-weight: bold;
+    color: rgb(20, 115, 110);
+
+    &:hover {
+        text-decoration: 2px underline;
+        text-decoration-color: darkseagreen;
+    }
+}

@@ -1,0 +1,25 @@
+.show{
+    display: block;
+}
+
+.hide{
+    display: none;
+}
+
+.dropdown a h2{
+    position: relative;
+
+    &::before {
+        content: '';
+        border-bottom: 2px solid darkseagreen;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0px;
+        transition: all 1s ease;
+    }
+
+    &:hover::before {
+        width: 100%;
+    }
+}

@@ -1,0 +1,21 @@
+.yard-image-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    img {
+        width: 27%;
+        padding: 1rem;
+    }
+}
+
+.column-center-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 100%; 
+}
+
+.whitespace {
+    padding: 2rem;
+}
