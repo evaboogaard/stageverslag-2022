@@ -1,0 +1,200 @@
+$block: 'card';
+
+.#{$block} {
+
+    &-background-translation {
+        position: relative;
+        width: 20rem;
+        padding: 2rem;
+        background-color: white;
+        overflow: hidden;
+        box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.1);
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: calc(-100% + 5px);
+            width: 100%;
+            height: 100%;
+            background-color: darkslategray;
+            z-index: 1;
+            transition: .5s;
+        }
+
+        &:hover {
+            &::before {
+                bottom: 0;
+            }
+
+            h4,
+            p {
+                color: white;
+            }
+
+            a {
+                background-color: white;
+                color: darkslategray;
+            }
+
+        }
+
+        .content {
+            position: relative;
+            text-transform: capitalize;
+            z-index: 2;
+            transition: .5s;
+        }
+
+        h4,
+        p,
+        a {
+            transition: .5s;
+        }
+
+        h4 {
+            margin-bottom: .5rem;
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        p {
+            padding: 1rem 0;
+        }
+
+        a {
+            box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, 0.1);
+            background-color: darkslategrey;
+            padding: .75rem;
+            color: white;
+        }
+    }
+
+    &-expandable {
+        position: relative;
+        width: 20rem;
+        height: 15.5rem;
+        border-radius: 1rem;
+        box-shadow: 0px .5rem 1.5rem rgba(0, 0, 0, 0.5);
+        transition: 0.3s;
+        padding: 1rem 2rem;
+        background-color: white;
+
+        &:hover {
+            height: 28rem;
+
+            .content {
+                opacity: 1;
+                transform: translateY(-2.5rem);
+            }
+        }
+
+        .img-box {
+            position: relative;
+            width: 16rem;
+            height: 16rem;
+            transform: translateY(-60px);
+            z-index: 1;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 1rem;
+                object-fit: cover;
+            }
+        }
+
+        .content {
+            padding: 10px 20px;
+            text-align: center;
+            color: #111;
+            transition: 0.3s;
+            transform: translateY(-500px);
+            opacity: 0;
+
+            h4 {
+                font-size: 1.5rem;
+                margin-bottom: .5rem;
+            }
+        }
+    }
+
+    &-scaling {
+        position: relative;
+        width: 20rem;
+        height: 25rem;
+        background-color: black;
+        box-shadow: 0px 1rem 2rem rgba(0, 0, 0, 0.5);
+
+        &:hover {
+            .content {
+                height: 100%;
+                width: 100%;
+                left: 0%;
+
+                p,
+                a {
+                    opacity: 1;
+                    transition-delay: 0.5s;
+                }
+            }
+
+            img {
+                opacity: 0;
+            }
+        }
+
+        .content {
+            position: absolute;
+            bottom: 0px;
+            width: 80%;
+            height: 5rem;
+            background-color: white;
+            left: 10%;
+            text-align: center;
+            transition: 0.5s;
+            overflow: hidden;
+
+            h4 {
+                font-size: 1.7rem;
+                text-transform: uppercase;
+                margin: 2rem;
+            }
+
+            p {
+                width: 80%;
+                margin: 1rem auto;
+                font-size: 1rem;
+                transition: 0.5s;
+                opacity: 0;
+            }
+
+            a {
+                text-decoration: none;
+                background-color: black;
+                color: white;
+                padding: 1rem 1.5rem;
+                display: inline-block;
+                margin-top: 1rem;
+                transition: 0.5s;
+                opacity: 0;
+            }
+        }
+
+        .img-box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: 0.5s;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: 0.5s;
+            }
+        }
+    }
+}

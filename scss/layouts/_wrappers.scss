@@ -18,3 +18,8 @@
 .whitespace {
     padding: 2rem;
 }
+
+.scroll-wrapper{
+    display: flex;
+    overflow-x: scroll;
+}
