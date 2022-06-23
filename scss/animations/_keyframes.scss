@@ -274,6 +274,13 @@ $block: 'animation';
         }
     }
 
+    &-loading-colorful-container {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+    }
+
     &-loading-colorful {
         margin-top: 4rem;
         width: 100px;
@@ -293,19 +300,19 @@ $block: 'animation';
                 left: 0;
                 background-color: #FCEBA7;
             }
-            
+
             &:nth-child(2) {
                 top: 0;
                 right: 0;
                 background-color: #55DDB9;
             }
-            
+
             &:nth-child(3) {
                 bottom: 0;
                 left: 0;
                 background-color: #FD6C64;
             }
-            
+
             &:nth-child(4) {
                 bottom: 0;
                 right: 0;
@@ -318,49 +325,85 @@ $block: 'animation';
         0% {
             transform: rotate(0deg);
         }
-    
+
         10% {
             transform: rotate(0deg);
         }
-    
+
         50% {
             transform: rotate(90deg);
         }
-    
+
         90% {
             transform: rotate(90deg);
         }
-    
+
         100% {
             transform: rotate(90deg);
         }
     }
-    
+
     @keyframes loading-animate {
         0% {
             width: 100px;
             height: 100px;
         }
-    
+
         10% {
             width: 100px;
             height: 100px;
         }
-    
+
         50% {
             width: 150px;
             height: 150px;
         }
-    
+
         90% {
             width: 100px;
             height: 100px;
         }
-    
+
         100% {
             width: 100px;
             height: 100px;
         }
+    }
+
+    &-loading-text-reveal {
+        font-size: 40px;
+        margin-top: 4rem;
+        padding: 0;
+        text-transform: uppercase;
+        letter-spacing: 10px;
+        color: black;
+        position: relative;
+        width: fit-content;
+
+        &::before {
+            content: "loading...";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            color: mediumseagreen;
+            overflow: hidden;
+            border-right: 4px solid mediumseagreen;
+            animation: text-reveal 4s linear infinite;
+        }
+    }
+
+    @keyframes text-reveal {
+        0% {
+            width: 0;
+        }
     
+        50% {
+            width: 100%;
+        }
+    
+        100% {
+            width: 0;
+        }
     }
 }
