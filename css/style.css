@@ -2761,6 +2761,91 @@ main {
   }
 }
 
+.banner {
+  position: relative;
+}
+
+.banner img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 20rem;
+  width: 120%;
+  -webkit-box-shadow: 5px 2px 15px rgba(0, 0, 0, 0.319);
+          box-shadow: 5px 2px 15px rgba(0, 0, 0, 0.319);
+  -webkit-animation: unblur 1s linear;
+          animation: unblur 1s linear;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.banner img::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+
+.banner h1 {
+  position: absolute;
+  z-index: 10;
+  text-shadow: 2px 5px 10px rgba(0, 0, 0, 0.81);
+  color: white;
+  font-size: 3.5rem;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  left: 50%;
+  -webkit-animation: fade-in 1.5s ease;
+          animation: fade-in 1.5s ease;
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+@-webkit-keyframes unblur {
+  0% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+  }
+  100% {
+    -webkit-filter: blur(0);
+            filter: blur(0);
+  }
+}
+
+@keyframes unblur {
+  0% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+  }
+  100% {
+    -webkit-filter: blur(0);
+            filter: blur(0);
+  }
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    bottom: 4rem;
+    opacity: 0;
+  }
+  100% {
+    bottom: 5rem;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    bottom: 4rem;
+    opacity: 0;
+  }
+  100% {
+    bottom: 5rem;
+    opacity: 1;
+  }
+}
+
 .code-paragraph {
   font-family: monospace;
 }
@@ -2808,9 +2893,11 @@ main {
 nav {
   position: fixed;
   z-index: 100;
-  background: darkslategray;
-  -webkit-box-shadow: 0.5rem 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
-          box-shadow: 0.5rem 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+  background: rgba(47, 79, 79, 0.8);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  -webkit-box-shadow: 0.5rem 0.2rem 0.5rem rgba(0, 0, 0, 0.401);
+          box-shadow: 0.5rem 0.2rem 0.5rem rgba(0, 0, 0, 0.401);
   width: 100%;
 }
 
