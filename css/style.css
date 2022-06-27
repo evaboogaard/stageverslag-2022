@@ -2772,10 +2772,6 @@ main {
   width: 120%;
   -webkit-box-shadow: 5px 2px 15px rgba(0, 0, 0, 0.319);
           box-shadow: 5px 2px 15px rgba(0, 0, 0, 0.319);
-  -webkit-animation: unblur 1s linear;
-          animation: unblur 1s linear;
-  -webkit-animation-fill-mode: both;
-          animation-fill-mode: both;
 }
 
 .banner img::before {
@@ -2800,28 +2796,6 @@ main {
           animation-delay: .5s;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
-}
-
-@-webkit-keyframes unblur {
-  0% {
-    -webkit-filter: blur(10px);
-            filter: blur(10px);
-  }
-  100% {
-    -webkit-filter: blur(0);
-            filter: blur(0);
-  }
-}
-
-@keyframes unblur {
-  0% {
-    -webkit-filter: blur(10px);
-            filter: blur(10px);
-  }
-  100% {
-    -webkit-filter: blur(0);
-            filter: blur(0);
-  }
 }
 
 @-webkit-keyframes fade-in {
